@@ -16,22 +16,22 @@ To get a local copy up and running follow these steps:
 1. Clone the repository.
 2. Navigate to the project directory.
 3. Install the required NuGet packages.
-    Entity Framework Core
+    Entity Framework Core:
     dotnet add package Microsoft.EntityFrameworkCore
 
-    Entity Framework Core Design
+    Entity Framework Core Design:
     dotnet add package Microsoft.EntityFrameworkCore.Design
 
-    Entity Framework Core Tools
+    Entity Framework Core Tools:
     dotnet add package Microsoft.EntityFrameworkCore.Tools
 
-    SQLite Database Provider for Entity Framework Core
+    SQLite Database Provider for Entity Framework Core:
     dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 
-    Microsoft Identity for JWT Authentication
+    Microsoft Identity for JWT Authentication:
     dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
 
-    JWT Bearer Authentication
+    JWT Bearer Authentication:
     dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
 
     Swashbuckle (Swagger)
