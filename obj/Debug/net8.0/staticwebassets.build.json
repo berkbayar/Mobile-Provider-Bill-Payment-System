@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Ey8BHfjUxBjvuemqtnsO1W7AwGHFWHQg8yRjp0syW7k=",
+  "Source": "MobileProviderAPI",
+  "BasePath": "_content/MobileProviderAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
