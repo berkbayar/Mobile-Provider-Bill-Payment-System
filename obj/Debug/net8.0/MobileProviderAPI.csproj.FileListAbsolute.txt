@@ -135,3 +135,4 @@
 /Users/berkbayar/Desktop/MobileProviderAPI/obj/Debug/net8.0/MobileProviderAPI.genruntimeconfig.cache
 /Users/berkbayar/Desktop/MobileProviderAPI/obj/Debug/net8.0/ref/MobileProviderAPI.dll
 /Users/berkbayar/Desktop/MobileProviderAPI/bin/Debug/net8.0/Microsoft.AspNetCore.Mvc.Versioning.dll
+/Users/berkbayar/Desktop/MobileProviderAPI/obj/Debug/net8.0/MobileProviderAPI.sourcelink.json
