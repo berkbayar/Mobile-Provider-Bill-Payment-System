@@ -66,7 +66,7 @@ namespace MobileProviderAPI.Controllers
             // Call SaveChanges for new Bill
             _context.SaveChanges();
 
-            return Ok(new { Message = "New bill and subscriber added", Bill = newBill });
+            return Ok(new { Message = "Added successfully.", Bill = newBill });
         }
 
         [HttpGet("getall")]
