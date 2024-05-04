@@ -4,6 +4,7 @@ using MobileProviderAPI.Models;
 using MobileProviderAPI.Data;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 namespace MobileProviderAPI.Controllers
 {
@@ -12,10 +13,12 @@ namespace MobileProviderAPI.Controllers
     public class WebsiteController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly RabbitMQPublisher _rabbitMQPublisher;
 
-        public WebsiteController(ApplicationDbContext context)
+        public WebsiteController(ApplicationDbContext context, RabbitMQPublisher rabbitMQPublisher)
         {
             _context = context;
+            _rabbitMQPublisher = rabbitMQPublisher;
         }
 
         // Pay bill operation 
@@ -30,6 +33,10 @@ namespace MobileProviderAPI.Controllers
             bill.PaidAmount = bill.TotalAmount;
 
             _context.SaveChanges();
+
+            // Send payment successful message to RabbitMQ
+            _rabbitMQPublisher.PublishPaymentDetails(JsonSerializer.Serialize(new { Message = "Payment successful", BillId = bill.BillId, SubscriberId = bill.SubscriberId }));
+
 
             return Ok(new { Message = "Payment successful", bill });
         }

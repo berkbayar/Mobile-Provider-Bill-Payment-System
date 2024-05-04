@@ -13,6 +13,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSingleton<RabbitMQPublisher>();
+
+var paymentQueueConsumer = new PaymentQueueConsumer();
+paymentQueueConsumer.StartConsuming();
 
 // Entity Framework Core
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -21,6 +25,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // JWT Authentication
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 var secretKey = jwtSettings["Secret"];
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -88,3 +93,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+//Clear RabbitMQ connection when application is stopped
+app.Lifetime.ApplicationStopping.Register(() => paymentQueueConsumer.StopConsuming());

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MobileProviderAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af062117963b614359e20d5a08705f6638e61be4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c740090b532b356986e6bc7cc3b35b6f0010a5b0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MobileProviderAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MobileProviderAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
